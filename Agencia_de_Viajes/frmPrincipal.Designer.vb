@@ -46,7 +46,7 @@ Partial Class frmPrincipal
         'DestinoToolStripMenuItem
         '
         Me.DestinoToolStripMenuItem.Name = "DestinoToolStripMenuItem"
-        Me.DestinoToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
+        Me.DestinoToolStripMenuItem.Size = New System.Drawing.Size(100, 27)
         Me.DestinoToolStripMenuItem.Text = "Destinos"
         '
         'ReservasToolStripMenuItem

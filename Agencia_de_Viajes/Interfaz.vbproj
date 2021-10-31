@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDestinos.Designer.vb">
+      <DependentUpon>frmDestinos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDestinos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDestinos.resx">
+      <DependentUpon>frmDestinos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
