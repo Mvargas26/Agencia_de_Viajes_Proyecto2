@@ -52,7 +52,7 @@ Partial Class frmPrincipal
         'ReservasToolStripMenuItem
         '
         Me.ReservasToolStripMenuItem.Name = "ReservasToolStripMenuItem"
-        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
+        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(107, 27)
         Me.ReservasToolStripMenuItem.Text = "Reservas"
         '
         'ComprasToolStripMenuItem

@@ -14,4 +14,16 @@
             MessageBox.Show(ex.Message, Me.Text)
         End Try
     End Sub
+
+    Private Sub ReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservasToolStripMenuItem.Click
+        Try 'Muestra pantalla Reservas
+            Dim frmPantalla As New frmReserva
+            With frmPantalla
+                .MdiParent = Me
+                .Show()
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text)
+        End Try
+    End Sub
 End Class
