@@ -26,4 +26,16 @@
             MessageBox.Show(ex.Message, Me.Text)
         End Try
     End Sub
+
+    Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem.Click
+        Try 'Muestra pantalla Compras
+            Dim frmPantalla As New frmCompra
+            With frmPantalla
+                .MdiParent = Me
+                .Show()
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text)
+        End Try
+    End Sub
 End Class

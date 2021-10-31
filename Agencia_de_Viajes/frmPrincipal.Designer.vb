@@ -26,7 +26,6 @@ Partial Class frmPrincipal
         Me.DestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExtrasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu.SuspendLayout()
@@ -36,10 +35,10 @@ Partial Class frmPrincipal
         '
         Me.Menu.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DestinoToolStripMenuItem, Me.ReservasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ExtrasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DestinoToolStripMenuItem, Me.ReservasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(1124, 31)
+        Me.Menu.Size = New System.Drawing.Size(861, 31)
         Me.Menu.TabIndex = 1
         Me.Menu.Text = "MenuStrip1"
         '
@@ -58,14 +57,8 @@ Partial Class frmPrincipal
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(104, 27)
         Me.ComprasToolStripMenuItem.Text = "Compras"
-        '
-        'ExtrasToolStripMenuItem
-        '
-        Me.ExtrasToolStripMenuItem.Name = "ExtrasToolStripMenuItem"
-        Me.ExtrasToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
-        Me.ExtrasToolStripMenuItem.Text = "Extras"
         '
         'AcercaDeToolStripMenuItem
         '
@@ -83,11 +76,12 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1124, 652)
+        Me.ClientSize = New System.Drawing.Size(861, 743)
         Me.Controls.Add(Me.Menu)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.Menu
         Me.Name = "frmPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "Menu Viajando y conociendo"
         Me.Menu.ResumeLayout(False)
         Me.Menu.PerformLayout()
@@ -100,7 +94,6 @@ Partial Class frmPrincipal
     Friend WithEvents DestinoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReservasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComprasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExtrasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
 End Class
