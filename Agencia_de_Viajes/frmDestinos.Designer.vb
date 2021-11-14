@@ -34,6 +34,7 @@ Partial Class frmDestinos
         Me.lblCantidadPasajeros = New System.Windows.Forms.Label()
         Me.txtEspaciosdisponibles = New System.Windows.Forms.TextBox()
         Me.txtIdentifVuelo = New System.Windows.Forms.TextBox()
+        Me.btnDestino = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblIdentfVuelo
@@ -59,6 +60,7 @@ Partial Class frmDestinos
         'cmbPaisDestino
         '
         Me.cmbPaisDestino.FormattingEnabled = True
+        Me.cmbPaisDestino.Items.AddRange(New Object() {"U.S.A", "Brasil", "México"})
         Me.cmbPaisDestino.Location = New System.Drawing.Point(161, 79)
         Me.cmbPaisDestino.Name = "cmbPaisDestino"
         Me.cmbPaisDestino.Size = New System.Drawing.Size(202, 27)
@@ -148,11 +150,21 @@ Partial Class frmDestinos
         Me.txtIdentifVuelo.Size = New System.Drawing.Size(102, 27)
         Me.txtIdentifVuelo.TabIndex = 12
         '
+        'btnDestino
+        '
+        Me.btnDestino.Location = New System.Drawing.Point(98, 366)
+        Me.btnDestino.Name = "btnDestino"
+        Me.btnDestino.Size = New System.Drawing.Size(193, 39)
+        Me.btnDestino.TabIndex = 13
+        Me.btnDestino.Text = "Seleccionar Destino"
+        Me.btnDestino.UseVisualStyleBackColor = True
+        '
         'frmDestinos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(421, 391)
+        Me.ClientSize = New System.Drawing.Size(421, 428)
+        Me.Controls.Add(Me.btnDestino)
         Me.Controls.Add(Me.txtIdentifVuelo)
         Me.Controls.Add(Me.txtEspaciosdisponibles)
         Me.Controls.Add(Me.lblCantidadPasajeros)
@@ -187,4 +199,5 @@ Partial Class frmDestinos
     Friend WithEvents lblCantidadPasajeros As Label
     Friend WithEvents txtEspaciosdisponibles As TextBox
     Friend WithEvents txtIdentifVuelo As TextBox
+    Friend WithEvents btnDestino As Button
 End Class

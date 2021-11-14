@@ -1,4 +1,4 @@
-﻿Public Class Tiquetes
+﻿Public Class Destinos
 
 #Region "Variables"
     Private iVueloidentificador As String = String.Empty
