@@ -63,7 +63,7 @@ Partial Class frmPrincipal
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(89, 24)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(114, 27)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'SalirToolStripMenuItem
