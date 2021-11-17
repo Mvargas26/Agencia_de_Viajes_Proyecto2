@@ -5,7 +5,7 @@
 
     Private Sub DestinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DestinoToolStripMenuItem.Click
         Try 'Muestra pantalla Destino
-            Dim frmPantalla As New frmDestinos
+            Dim frmPantalla As New frmReservaVuelo
             With frmPantalla
                 .MdiParent = Me
                 .Show()
@@ -17,7 +17,7 @@
 
     Private Sub ReservasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservasToolStripMenuItem.Click
         Try 'Muestra pantalla Reservas
-            Dim frmPantalla As New frmReserva
+            Dim frmPantalla As New frmConsultarReserva
             With frmPantalla
                 .MdiParent = Me
                 .Show()

@@ -85,10 +85,10 @@
     <Compile Include="frmCompra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDestinos.Designer.vb">
-      <DependentUpon>frmDestinos.vb</DependentUpon>
+    <Compile Include="frmReservaVuelo.Designer.vb">
+      <DependentUpon>frmReservaVuelo.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDestinos.vb">
+    <Compile Include="frmReservaVuelo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.vb">
@@ -98,10 +98,10 @@
       <DependentUpon>frmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReserva.Designer.vb">
-      <DependentUpon>frmReserva.vb</DependentUpon>
+    <Compile Include="frmConsultarReserva.Designer.vb">
+      <DependentUpon>frmConsultarReserva.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReserva.vb">
+    <Compile Include="frmConsultarReserva.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,14 +127,14 @@
     <EmbeddedResource Include="frmCompra.resx">
       <DependentUpon>frmCompra.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDestinos.resx">
-      <DependentUpon>frmDestinos.vb</DependentUpon>
+    <EmbeddedResource Include="frmReservaVuelo.resx">
+      <DependentUpon>frmReservaVuelo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReserva.resx">
-      <DependentUpon>frmReserva.vb</DependentUpon>
+    <EmbeddedResource Include="frmConsultarReserva.resx">
+      <DependentUpon>frmConsultarReserva.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

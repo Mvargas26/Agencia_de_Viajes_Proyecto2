@@ -45,20 +45,20 @@ Partial Class frmPrincipal
         'DestinoToolStripMenuItem
         '
         Me.DestinoToolStripMenuItem.Name = "DestinoToolStripMenuItem"
-        Me.DestinoToolStripMenuItem.Size = New System.Drawing.Size(100, 27)
-        Me.DestinoToolStripMenuItem.Text = "Destinos"
+        Me.DestinoToolStripMenuItem.Size = New System.Drawing.Size(184, 27)
+        Me.DestinoToolStripMenuItem.Text = "Reservar un Vuelo"
         '
         'ReservasToolStripMenuItem
         '
         Me.ReservasToolStripMenuItem.Name = "ReservasToolStripMenuItem"
-        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(107, 27)
-        Me.ReservasToolStripMenuItem.Text = "Reservas"
+        Me.ReservasToolStripMenuItem.Size = New System.Drawing.Size(186, 27)
+        Me.ReservasToolStripMenuItem.Text = "Consultar Reserva"
         '
         'ComprasToolStripMenuItem
         '
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(104, 27)
-        Me.ComprasToolStripMenuItem.Text = "Compras"
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(163, 27)
+        Me.ComprasToolStripMenuItem.Text = "Comprar Boleto"
         '
         'AcercaDeToolStripMenuItem
         '

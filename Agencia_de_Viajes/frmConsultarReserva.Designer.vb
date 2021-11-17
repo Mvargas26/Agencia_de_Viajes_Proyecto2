@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmReserva
+Partial Class frmConsultarReserva
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -80,14 +80,14 @@ Partial Class frmReserva
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
-        'frmReserva
+        'frmConsultarReserva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(695, 262)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.listvConsultaReserva)
-        Me.Name = "frmReserva"
+        Me.Name = "frmConsultarReserva"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consultar Reserva"
         Me.GroupBox1.ResumeLayout(False)
