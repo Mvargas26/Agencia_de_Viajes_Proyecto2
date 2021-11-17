@@ -1,38 +1,25 @@
-﻿Public Class frmCompra
-    Private Sub chkAcompanantes_CheckedChanged(sender As Object, e As EventArgs) Handles chkAcompanantes.CheckedChanged
-        Try ' Permite agregar datos de los acopañantes
-            If chkAcompanantes.Checked Then
-                grpAcompanantes.Visible = True
+﻿Imports System.IO
+Public Class frmCompra
+    Dim cantAcompa As Integer = 0
+    Private Sub txtCantidadAcompanantes_TextChanged(sender As Object, e As EventArgs) Handles txtCantidadAcompanantes.TextChanged
+        'validamos si cant de acompanantes es mas que 0, permite ingresar los datos del mismo
+        Try
+
+            If txtCantidadAcompanantes.Text = "" Or Not IsNumeric(txtCantidadAcompanantes.Text) Then
+                cantAcompa = 0
+                MessageBox.Show("Favor ingrese un valor numerico")
             Else
+                cantAcompa = CInt(txtCantidadAcompanantes.Text)
+            End If
+
+            If cantAcompa <= 0 Then
                 grpAcompanantes.Visible = False
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text)
-        End Try
-
-    End Sub
-
-    Private Sub chkMaletasExtra_CheckedChanged(sender As Object, e As EventArgs) Handles chkMaletasExtra.CheckedChanged
-        Try ' Permite agregar datos de Maletas Extra
-            If chkMaletasExtra.Checked Then
-                grpMaletas.Visible = True
             Else
-                grpMaletas.Visible = False
+                grpAcompanantes.Visible = True
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text)
+            'en blanco para que no haga nada
         End Try
-    End Sub
 
-    Private Sub chkServiciosExtra_CheckedChanged(sender As Object, e As EventArgs) Handles chkServiciosExtra.CheckedChanged
-        Try ' Permite agregar datos de Servicios Extra
-            If chkServiciosExtra.Checked Then
-                grpServiciosExtra.Visible = True
-            Else
-                grpServiciosExtra.Visible = False
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text)
-        End Try
     End Sub
 End Class

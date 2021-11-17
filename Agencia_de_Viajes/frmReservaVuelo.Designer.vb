@@ -32,6 +32,12 @@ Partial Class frmReservaVuelo
         Me.txtIdentifVuelo = New System.Windows.Forms.TextBox()
         Me.btnReserva = New System.Windows.Forms.Button()
         Me.grpDatosPersonales = New System.Windows.Forms.GroupBox()
+        Me.txtCantidadAcompanantes = New System.Windows.Forms.TextBox()
+        Me.lblCantAcompanantes = New System.Windows.Forms.Label()
+        Me.txtCantidadDias = New System.Windows.Forms.TextBox()
+        Me.lblCantDias = New System.Windows.Forms.Label()
+        Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
+        Me.lblFechaSalida = New System.Windows.Forms.Label()
         Me.dtpikFechaRegreso = New System.Windows.Forms.DateTimePicker()
         Me.lblFechaRegreso = New System.Windows.Forms.Label()
         Me.txtNacionalidad = New System.Windows.Forms.TextBox()
@@ -42,12 +48,6 @@ Partial Class frmReservaVuelo
         Me.lblApellidos = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
-        Me.lblFechaSalida = New System.Windows.Forms.Label()
-        Me.txtCantidadDias = New System.Windows.Forms.TextBox()
-        Me.lblCantDias = New System.Windows.Forms.Label()
-        Me.txtCantidadAcompanantes = New System.Windows.Forms.TextBox()
-        Me.lblCantAcompanantes = New System.Windows.Forms.Label()
         Me.txtZonaPrefe = New System.Windows.Forms.TextBox()
         Me.chkZonaPrefe = New System.Windows.Forms.CheckBox()
         Me.chkZonaExLegrom = New System.Windows.Forms.CheckBox()
@@ -114,16 +114,16 @@ Partial Class frmReservaVuelo
         'lblPrecioTiquete
         '
         Me.lblPrecioTiquete.AutoSize = True
-        Me.lblPrecioTiquete.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecioTiquete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrecioTiquete.Location = New System.Drawing.Point(192, 873)
         Me.lblPrecioTiquete.Name = "lblPrecioTiquete"
-        Me.lblPrecioTiquete.Size = New System.Drawing.Size(119, 19)
+        Me.lblPrecioTiquete.Size = New System.Drawing.Size(142, 23)
         Me.lblPrecioTiquete.TabIndex = 8
         Me.lblPrecioTiquete.Text = "Precio Tiquete:"
         '
         'txtPrecioTiquete
         '
-        Me.txtPrecioTiquete.Location = New System.Drawing.Point(327, 870)
+        Me.txtPrecioTiquete.Location = New System.Drawing.Point(340, 869)
         Me.txtPrecioTiquete.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPrecioTiquete.Name = "txtPrecioTiquete"
         Me.txtPrecioTiquete.ReadOnly = True
@@ -172,12 +172,67 @@ Partial Class frmReservaVuelo
         Me.grpDatosPersonales.Controls.Add(Me.txtNombre)
         Me.grpDatosPersonales.Controls.Add(Me.lblNombre)
         Me.grpDatosPersonales.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpDatosPersonales.Location = New System.Drawing.Point(12, 10)
+        Me.grpDatosPersonales.Location = New System.Drawing.Point(12, 12)
         Me.grpDatosPersonales.Name = "grpDatosPersonales"
         Me.grpDatosPersonales.Size = New System.Drawing.Size(458, 549)
         Me.grpDatosPersonales.TabIndex = 14
         Me.grpDatosPersonales.TabStop = False
         Me.grpDatosPersonales.Text = "Datos Personales"
+        '
+        'txtCantidadAcompanantes
+        '
+        Me.txtCantidadAcompanantes.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidadAcompanantes.Location = New System.Drawing.Point(298, 481)
+        Me.txtCantidadAcompanantes.Name = "txtCantidadAcompanantes"
+        Me.txtCantidadAcompanantes.Size = New System.Drawing.Size(89, 27)
+        Me.txtCantidadAcompanantes.TabIndex = 21
+        '
+        'lblCantAcompanantes
+        '
+        Me.lblCantAcompanantes.AutoSize = True
+        Me.lblCantAcompanantes.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantAcompanantes.Location = New System.Drawing.Point(19, 481)
+        Me.lblCantAcompanantes.Name = "lblCantAcompanantes"
+        Me.lblCantAcompanantes.Size = New System.Drawing.Size(258, 23)
+        Me.lblCantAcompanantes.TabIndex = 20
+        Me.lblCantAcompanantes.Text = "Cantidad de Acompañantes:"
+        '
+        'txtCantidadDias
+        '
+        Me.txtCantidadDias.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidadDias.Location = New System.Drawing.Point(298, 435)
+        Me.txtCantidadDias.Name = "txtCantidadDias"
+        Me.txtCantidadDias.Size = New System.Drawing.Size(89, 27)
+        Me.txtCantidadDias.TabIndex = 19
+        '
+        'lblCantDias
+        '
+        Me.lblCantDias.AutoSize = True
+        Me.lblCantDias.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantDias.Location = New System.Drawing.Point(19, 435)
+        Me.lblCantDias.Name = "lblCantDias"
+        Me.lblCantDias.Size = New System.Drawing.Size(164, 23)
+        Me.lblCantDias.TabIndex = 18
+        Me.lblCantDias.Text = "Cantidad de dias:"
+        '
+        'dtpFechaSalida
+        '
+        Me.dtpFechaSalida.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaSalida.Location = New System.Drawing.Point(241, 284)
+        Me.dtpFechaSalida.Name = "dtpFechaSalida"
+        Me.dtpFechaSalida.Size = New System.Drawing.Size(145, 30)
+        Me.dtpFechaSalida.TabIndex = 17
+        '
+        'lblFechaSalida
+        '
+        Me.lblFechaSalida.AutoSize = True
+        Me.lblFechaSalida.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaSalida.Location = New System.Drawing.Point(19, 295)
+        Me.lblFechaSalida.Name = "lblFechaSalida"
+        Me.lblFechaSalida.Size = New System.Drawing.Size(130, 23)
+        Me.lblFechaSalida.TabIndex = 16
+        Me.lblFechaSalida.Text = "Fecha Salida:"
         '
         'dtpikFechaRegreso
         '
@@ -269,61 +324,6 @@ Partial Class frmReservaVuelo
         Me.lblNombre.Size = New System.Drawing.Size(85, 23)
         Me.lblNombre.TabIndex = 0
         Me.lblNombre.Text = "Nombre:"
-        '
-        'dtpFechaSalida
-        '
-        Me.dtpFechaSalida.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaSalida.Location = New System.Drawing.Point(241, 284)
-        Me.dtpFechaSalida.Name = "dtpFechaSalida"
-        Me.dtpFechaSalida.Size = New System.Drawing.Size(145, 30)
-        Me.dtpFechaSalida.TabIndex = 17
-        '
-        'lblFechaSalida
-        '
-        Me.lblFechaSalida.AutoSize = True
-        Me.lblFechaSalida.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaSalida.Location = New System.Drawing.Point(19, 295)
-        Me.lblFechaSalida.Name = "lblFechaSalida"
-        Me.lblFechaSalida.Size = New System.Drawing.Size(130, 23)
-        Me.lblFechaSalida.TabIndex = 16
-        Me.lblFechaSalida.Text = "Fecha Salida:"
-        '
-        'txtCantidadDias
-        '
-        Me.txtCantidadDias.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidadDias.Location = New System.Drawing.Point(298, 435)
-        Me.txtCantidadDias.Name = "txtCantidadDias"
-        Me.txtCantidadDias.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadDias.TabIndex = 19
-        '
-        'lblCantDias
-        '
-        Me.lblCantDias.AutoSize = True
-        Me.lblCantDias.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantDias.Location = New System.Drawing.Point(19, 435)
-        Me.lblCantDias.Name = "lblCantDias"
-        Me.lblCantDias.Size = New System.Drawing.Size(164, 23)
-        Me.lblCantDias.TabIndex = 18
-        Me.lblCantDias.Text = "Cantidad de dias:"
-        '
-        'txtCantidadAcompanantes
-        '
-        Me.txtCantidadAcompanantes.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidadAcompanantes.Location = New System.Drawing.Point(298, 481)
-        Me.txtCantidadAcompanantes.Name = "txtCantidadAcompanantes"
-        Me.txtCantidadAcompanantes.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadAcompanantes.TabIndex = 21
-        '
-        'lblCantAcompanantes
-        '
-        Me.lblCantAcompanantes.AutoSize = True
-        Me.lblCantAcompanantes.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantAcompanantes.Location = New System.Drawing.Point(19, 481)
-        Me.lblCantAcompanantes.Name = "lblCantAcompanantes"
-        Me.lblCantAcompanantes.Size = New System.Drawing.Size(258, 23)
-        Me.lblCantAcompanantes.TabIndex = 20
-        Me.lblCantAcompanantes.Text = "Cantidad de Acompañantes:"
         '
         'txtZonaPrefe
         '
