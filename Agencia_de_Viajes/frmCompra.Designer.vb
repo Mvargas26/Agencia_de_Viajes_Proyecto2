@@ -35,7 +35,9 @@ Partial Class frmCompra
         Me.grpDatosPersonales = New System.Windows.Forms.GroupBox()
         Me.txtCantidadAcompanantes = New System.Windows.Forms.TextBox()
         Me.lblCantAcompanantes = New System.Windows.Forms.Label()
+        Me.txtIdentifVuelo = New System.Windows.Forms.TextBox()
         Me.txtCantidadDias = New System.Windows.Forms.TextBox()
+        Me.lblIdentfVuelo = New System.Windows.Forms.Label()
         Me.lblCantDias = New System.Windows.Forms.Label()
         Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
         Me.lblFechaSalida = New System.Windows.Forms.Label()
@@ -82,6 +84,7 @@ Partial Class frmCompra
         Me.txt14k = New System.Windows.Forms.TextBox()
         Me.txtPrecioTiquete = New System.Windows.Forms.TextBox()
         Me.lblPrecioTiquete = New System.Windows.Forms.Label()
+        Me.btnCalcularMonto = New System.Windows.Forms.Button()
         Me.grpAcompanantes.SuspendLayout()
         Me.grpDatosPersonales.SuspendLayout()
         Me.grpExtras.SuspendLayout()
@@ -100,7 +103,7 @@ Partial Class frmCompra
         Me.grpAcompanantes.Controls.Add(Me.txtNombreAcompanante)
         Me.grpAcompanantes.Controls.Add(Me.lblNombreAcompanante)
         Me.grpAcompanantes.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpAcompanantes.Location = New System.Drawing.Point(679, 28)
+        Me.grpAcompanantes.Location = New System.Drawing.Point(679, 36)
         Me.grpAcompanantes.Name = "grpAcompanantes"
         Me.grpAcompanantes.Size = New System.Drawing.Size(412, 229)
         Me.grpAcompanantes.TabIndex = 1
@@ -182,20 +185,23 @@ Partial Class frmCompra
         '
         'btnComprarTiquete
         '
+        Me.btnComprarTiquete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btnComprarTiquete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnComprarTiquete.Font = New System.Drawing.Font("Arial Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnComprarTiquete.Location = New System.Drawing.Point(280, 926)
+        Me.btnComprarTiquete.Location = New System.Drawing.Point(310, 965)
         Me.btnComprarTiquete.Name = "btnComprarTiquete"
         Me.btnComprarTiquete.Size = New System.Drawing.Size(235, 43)
         Me.btnComprarTiquete.TabIndex = 9
         Me.btnComprarTiquete.Text = "Comprar Tiquetes"
-        Me.btnComprarTiquete.UseVisualStyleBackColor = True
+        Me.btnComprarTiquete.UseVisualStyleBackColor = False
         '
         'grpDatosPersonales
         '
         Me.grpDatosPersonales.Controls.Add(Me.txtCantidadAcompanantes)
         Me.grpDatosPersonales.Controls.Add(Me.lblCantAcompanantes)
+        Me.grpDatosPersonales.Controls.Add(Me.txtIdentifVuelo)
         Me.grpDatosPersonales.Controls.Add(Me.txtCantidadDias)
+        Me.grpDatosPersonales.Controls.Add(Me.lblIdentfVuelo)
         Me.grpDatosPersonales.Controls.Add(Me.lblCantDias)
         Me.grpDatosPersonales.Controls.Add(Me.dtpFechaSalida)
         Me.grpDatosPersonales.Controls.Add(Me.lblFechaSalida)
@@ -216,7 +222,7 @@ Partial Class frmCompra
         Me.grpDatosPersonales.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpDatosPersonales.Location = New System.Drawing.Point(12, 12)
         Me.grpDatosPersonales.Name = "grpDatosPersonales"
-        Me.grpDatosPersonales.Size = New System.Drawing.Size(458, 549)
+        Me.grpDatosPersonales.Size = New System.Drawing.Size(586, 549)
         Me.grpDatosPersonales.TabIndex = 15
         Me.grpDatosPersonales.TabStop = False
         Me.grpDatosPersonales.Text = "Datos Personales"
@@ -228,6 +234,7 @@ Partial Class frmCompra
         Me.txtCantidadAcompanantes.Name = "txtCantidadAcompanantes"
         Me.txtCantidadAcompanantes.Size = New System.Drawing.Size(89, 27)
         Me.txtCantidadAcompanantes.TabIndex = 21
+        Me.txtCantidadAcompanantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCantAcompanantes
         '
@@ -239,13 +246,35 @@ Partial Class frmCompra
         Me.lblCantAcompanantes.TabIndex = 20
         Me.lblCantAcompanantes.Text = "Cantidad de Acompañantes:"
         '
+        'txtIdentifVuelo
+        '
+        Me.txtIdentifVuelo.Location = New System.Drawing.Point(431, 52)
+        Me.txtIdentifVuelo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtIdentifVuelo.Name = "txtIdentifVuelo"
+        Me.txtIdentifVuelo.ReadOnly = True
+        Me.txtIdentifVuelo.Size = New System.Drawing.Size(102, 28)
+        Me.txtIdentifVuelo.TabIndex = 36
+        Me.txtIdentifVuelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'txtCantidadDias
         '
         Me.txtCantidadDias.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCantidadDias.Location = New System.Drawing.Point(298, 435)
         Me.txtCantidadDias.Name = "txtCantidadDias"
+        Me.txtCantidadDias.ReadOnly = True
         Me.txtCantidadDias.Size = New System.Drawing.Size(89, 27)
         Me.txtCantidadDias.TabIndex = 19
+        Me.txtCantidadDias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblIdentfVuelo
+        '
+        Me.lblIdentfVuelo.AutoSize = True
+        Me.lblIdentfVuelo.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIdentfVuelo.Location = New System.Drawing.Point(392, 24)
+        Me.lblIdentfVuelo.Name = "lblIdentfVuelo"
+        Me.lblIdentfVuelo.Size = New System.Drawing.Size(176, 19)
+        Me.lblIdentfVuelo.TabIndex = 35
+        Me.lblIdentfVuelo.Text = "Identificador del Vuelo:"
         '
         'lblCantDias
         '
@@ -427,7 +456,7 @@ Partial Class frmCompra
         '
         Me.txtFasttrack.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.txtFasttrack.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFasttrack.Location = New System.Drawing.Point(238, 326)
+        Me.txtFasttrack.Location = New System.Drawing.Point(238, 311)
         Me.txtFasttrack.Multiline = True
         Me.txtFasttrack.Name = "txtFasttrack"
         Me.txtFasttrack.ReadOnly = True
@@ -463,7 +492,7 @@ Partial Class frmCompra
         'chkFastTrack
         '
         Me.chkFastTrack.AutoSize = True
-        Me.chkFastTrack.Location = New System.Drawing.Point(251, 294)
+        Me.chkFastTrack.Location = New System.Drawing.Point(251, 279)
         Me.chkFastTrack.Name = "chkFastTrack"
         Me.chkFastTrack.Size = New System.Drawing.Size(135, 26)
         Me.chkFastTrack.TabIndex = 26
@@ -508,7 +537,7 @@ Partial Class frmCompra
         Me.txtZonaPrefe.Multiline = True
         Me.txtZonaPrefe.Name = "txtZonaPrefe"
         Me.txtZonaPrefe.ReadOnly = True
-        Me.txtZonaPrefe.Size = New System.Drawing.Size(159, 178)
+        Me.txtZonaPrefe.Size = New System.Drawing.Size(159, 193)
         Me.txtZonaPrefe.TabIndex = 19
         Me.txtZonaPrefe.Text = "Lugares con mas espacios,silla reclinable," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ajuste de cabecera y conexion USB por" &
     " un " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "7% mas en el valor del boleto."
@@ -536,6 +565,7 @@ Partial Class frmCompra
         'chkmas20
         '
         Me.chkmas20.AutoSize = True
+        Me.chkmas20.Enabled = False
         Me.chkmas20.Location = New System.Drawing.Point(237, 147)
         Me.chkmas20.Name = "chkmas20"
         Me.chkmas20.Size = New System.Drawing.Size(170, 26)
@@ -594,6 +624,7 @@ Partial Class frmCompra
         'chk15a19
         '
         Me.chk15a19.AutoSize = True
+        Me.chk15a19.Enabled = False
         Me.chk15a19.Location = New System.Drawing.Point(10, 147)
         Me.chk15a19.Name = "chk15a19"
         Me.chk15a19.Size = New System.Drawing.Size(173, 26)
@@ -604,6 +635,7 @@ Partial Class frmCompra
         'chk10a14
         '
         Me.chk10a14.AutoSize = True
+        Me.chk10a14.Enabled = False
         Me.chk10a14.Location = New System.Drawing.Point(422, 45)
         Me.chk10a14.Name = "chk10a14"
         Me.chk10a14.Size = New System.Drawing.Size(173, 26)
@@ -614,6 +646,7 @@ Partial Class frmCompra
         'chk0a9
         '
         Me.chk0a9.AutoSize = True
+        Me.chk0a9.Enabled = False
         Me.chk0a9.Location = New System.Drawing.Point(211, 45)
         Me.chk0a9.Name = "chk0a9"
         Me.chk0a9.Size = New System.Drawing.Size(151, 26)
@@ -624,6 +657,7 @@ Partial Class frmCompra
         'chk0a5
         '
         Me.chk0a5.AutoSize = True
+        Me.chk0a5.Enabled = False
         Me.chk0a5.Location = New System.Drawing.Point(10, 45)
         Me.chk0a5.Name = "chk0a5"
         Me.chk0a5.Size = New System.Drawing.Size(151, 26)
@@ -652,7 +686,7 @@ Partial Class frmCompra
         Me.grpMaletas.Controls.Add(Me.chk14k)
         Me.grpMaletas.Controls.Add(Me.txt14k)
         Me.grpMaletas.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpMaletas.Location = New System.Drawing.Point(588, 280)
+        Me.grpMaletas.Location = New System.Drawing.Point(598, 280)
         Me.grpMaletas.Name = "grpMaletas"
         Me.grpMaletas.Size = New System.Drawing.Size(503, 161)
         Me.grpMaletas.TabIndex = 32
@@ -727,29 +761,43 @@ Partial Class frmCompra
         '
         'txtPrecioTiquete
         '
-        Me.txtPrecioTiquete.Location = New System.Drawing.Point(404, 880)
+        Me.txtPrecioTiquete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecioTiquete.Location = New System.Drawing.Point(410, 848)
         Me.txtPrecioTiquete.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPrecioTiquete.Name = "txtPrecioTiquete"
         Me.txtPrecioTiquete.ReadOnly = True
-        Me.txtPrecioTiquete.Size = New System.Drawing.Size(111, 22)
+        Me.txtPrecioTiquete.Size = New System.Drawing.Size(141, 27)
         Me.txtPrecioTiquete.TabIndex = 34
         '
         'lblPrecioTiquete
         '
         Me.lblPrecioTiquete.AutoSize = True
         Me.lblPrecioTiquete.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecioTiquete.Location = New System.Drawing.Point(256, 877)
+        Me.lblPrecioTiquete.Location = New System.Drawing.Point(262, 845)
         Me.lblPrecioTiquete.Name = "lblPrecioTiquete"
         Me.lblPrecioTiquete.Size = New System.Drawing.Size(142, 23)
         Me.lblPrecioTiquete.TabIndex = 33
         Me.lblPrecioTiquete.Text = "Precio Tiquete:"
+        '
+        'btnCalcularMonto
+        '
+        Me.btnCalcularMonto.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnCalcularMonto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCalcularMonto.Font = New System.Drawing.Font("Arial Black", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularMonto.Location = New System.Drawing.Point(253, 896)
+        Me.btnCalcularMonto.Name = "btnCalcularMonto"
+        Me.btnCalcularMonto.Size = New System.Drawing.Size(292, 43)
+        Me.btnCalcularMonto.TabIndex = 35
+        Me.btnCalcularMonto.Text = "Calcular Monto Tiquete"
+        Me.btnCalcularMonto.UseVisualStyleBackColor = False
         '
         'frmCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1130, 1004)
+        Me.ClientSize = New System.Drawing.Size(1151, 1004)
+        Me.Controls.Add(Me.btnCalcularMonto)
         Me.Controls.Add(Me.txtPrecioTiquete)
         Me.Controls.Add(Me.lblPrecioTiquete)
         Me.Controls.Add(Me.grpMaletas)
@@ -835,4 +883,7 @@ Partial Class frmCompra
     Friend WithEvents txt14k As TextBox
     Friend WithEvents txtPrecioTiquete As TextBox
     Friend WithEvents lblPrecioTiquete As Label
+    Friend WithEvents txtIdentifVuelo As TextBox
+    Friend WithEvents lblIdentfVuelo As Label
+    Friend WithEvents btnCalcularMonto As Button
 End Class
