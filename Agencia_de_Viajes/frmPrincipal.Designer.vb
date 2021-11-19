@@ -22,25 +22,25 @@ Partial Class frmPrincipal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.MenuPantallaPrincipal = New System.Windows.Forms.MenuStrip()
         Me.DestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReservasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu.SuspendLayout()
+        Me.MenuPantallaPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Menu
+        'MenuPantallaPrincipal
         '
-        Me.Menu.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Menu.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DestinoToolStripMenuItem, Me.ReservasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(1165, 31)
-        Me.Menu.TabIndex = 1
-        Me.Menu.Text = "MenuStrip1"
+        Me.MenuPantallaPrincipal.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuPantallaPrincipal.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuPantallaPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DestinoToolStripMenuItem, Me.ReservasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuPantallaPrincipal.Location = New System.Drawing.Point(0, 0)
+        Me.MenuPantallaPrincipal.Name = "MenuPantallaPrincipal"
+        Me.MenuPantallaPrincipal.Size = New System.Drawing.Size(1165, 31)
+        Me.MenuPantallaPrincipal.TabIndex = 1
+        Me.MenuPantallaPrincipal.Text = "MenuStrip1"
         '
         'DestinoToolStripMenuItem
         '
@@ -77,20 +77,20 @@ Partial Class frmPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1165, 884)
-        Me.Controls.Add(Me.Menu)
+        Me.Controls.Add(Me.MenuPantallaPrincipal)
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.Menu
+        Me.MainMenuStrip = Me.MenuPantallaPrincipal
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "Menu Viajando y conociendo"
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
+        Me.MenuPantallaPrincipal.ResumeLayout(False)
+        Me.MenuPantallaPrincipal.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents MenuPantallaPrincipal As MenuStrip
     Friend WithEvents DestinoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReservasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComprasToolStripMenuItem As ToolStripMenuItem

@@ -6,7 +6,7 @@ Public Class OPERACIONES
 #Region "Variables"
     Private strNombreCliente As String = String.Empty
     Private strApellidosCliente As String = String.Empty
-    Private strIdentificacionCliente As String = String.Empty
+    Private intIdentificacionCliente As Integer = 0
     Private strNacionalidadCliente As String = String.Empty
 
     Private intValorMaletasExtra As Integer = 0
@@ -15,6 +15,7 @@ Public Class OPERACIONES
     Private iVueloidentificador As String = String.Empty
     Private iPaisDestino As String = String.Empty
     Private iFechaSalida As String = String.Empty
+    Private iFechaRegreso As String = String.Empty
     Private iHoraSalida As String = String.Empty
     Private iPrecioTiquete As Integer = 0
     Private iCantidaddias As Integer = 0
@@ -24,6 +25,11 @@ Public Class OPERACIONES
     Private iextraZonaLegrom As Integer = 0
     Private iextraInternet As Decimal = 0
     Private iextrafasttrack As Decimal = 0
+
+    Private strNombreAcompanante As String = String.Empty
+    Private strApellidosAcompanante As String = String.Empty
+    Private intIdentificacionAcompanante As Integer = 0
+    Private strNacionalidadAcompanante As String = String.Empty
 
 
 #End Region
@@ -47,12 +53,12 @@ Public Class OPERACIONES
         End Set
     End Property
 
-    Public Property IdentificacionCliente As String
+    Public Property IdentificacionCliente As Integer
         Get
-            Return strIdentificacionCliente
+            Return intIdentificacionCliente
         End Get
-        Set(value As String)
-            strIdentificacionCliente = value
+        Set(value As Integer)
+            intIdentificacionCliente = value
         End Set
     End Property
 
@@ -190,6 +196,51 @@ Public Class OPERACIONES
             iextrafasttrack = value
         End Set
     End Property
+
+    Public Property FechaRegreso As String
+        Get
+            Return iFechaRegreso
+        End Get
+        Set(value As String)
+            iFechaRegreso = value
+        End Set
+    End Property
+
+    Public Property NombreAcompanante As String
+        Get
+            Return strNombreAcompanante
+        End Get
+        Set(value As String)
+            strNombreAcompanante = value
+        End Set
+    End Property
+
+    Public Property ApellidosAcompanante As String
+        Get
+            Return strApellidosAcompanante
+        End Get
+        Set(value As String)
+            strApellidosAcompanante = value
+        End Set
+    End Property
+
+    Public Property IdentificacionAcompanante As Integer
+        Get
+            Return intIdentificacionAcompanante
+        End Get
+        Set(value As Integer)
+            intIdentificacionAcompanante = value
+        End Set
+    End Property
+
+    Public Property NacionalidadAcompanante As String
+        Get
+            Return strNacionalidadAcompanante
+        End Get
+        Set(value As String)
+            strNacionalidadAcompanante = value
+        End Set
+    End Property
 #End Region
 
 
@@ -217,49 +268,103 @@ Public Class OPERACIONES
             precioFinal += extraInternet
         End If
 
+        If extrafasttrack <> 0 Then 'sumamos un 5% si seleccionaron fast track
+            precioFinal += extrafasttrack
+        End If
+
         Return precioFinal
     End Function
 
-    Public Sub AlmacenaXMLDestinos(ByVal URL As String, ByVal ListaDestinos As List(Of Cliente))
-        Dim XMLDestinos As New XmlDocument
+    Public Sub AlmacenaXML(ByVal URL As String, ByVal ListaBoletos As List(Of OPERACIONES))
+        Try
 
-        Dim NodoPadre As XmlNode = XMLDestinos.CreateElement("Destinos")
-        XMLDestinos.AppendChild(NodoPadre)
 
-        For Each iDest As Cliente In ListaDestinos
-            Dim nodoDetalles As XmlNode = XMLDestinos.CreateElement("Detalles")
+            Dim XMLBoletoComprado As New XmlDocument
 
-            With nodoDetalles
-                Dim nodoInfo As XmlNode = XMLDestinos.CreateElement("Identificador_Vuelo")
-                nodoInfo.InnerText = iDest.Vueloidentificador
-                .AppendChild(nodoInfo)
+            Dim NodoPadre As XmlNode = XMLBoletoComprado.CreateElement("Boletos")
+            XMLBoletoComprado.AppendChild(NodoPadre)
 
-                nodoInfo = XMLDestinos.CreateElement("Pais_Destino")
-                nodoInfo.InnerText = iDest.PaisDestino
-                .AppendChild(nodoInfo)
+            For Each iBoleto As OPERACIONES In ListaBoletos
+                Dim nodoDetalles As XmlNode = XMLBoletoComprado.CreateElement("Detalles")
 
-                nodoInfo = XMLDestinos.CreateElement("Fecha_Salida")
-                nodoInfo.InnerText = iDest.FechaSalida
-                .AppendChild(nodoInfo)
+                With nodoDetalles
+                    Dim nodoInfo As XmlNode = XMLBoletoComprado.CreateElement("Identificacion_Cliente")
+                    nodoInfo.InnerText = iBoleto.IdentificacionCliente
+                    .AppendChild(nodoInfo)
 
-                nodoInfo = XMLDestinos.CreateElement("Hora_Salida")
-                nodoInfo.InnerText = iDest.HoraSalida
-                .AppendChild(nodoInfo)
+                    nodoInfo = XMLBoletoComprado.CreateElement("Identificador_Vuelo")
+                    nodoInfo.InnerText = iBoleto.Vueloidentificador
+                    .AppendChild(nodoInfo)
 
-                nodoInfo = XMLDestinos.CreateElement("Precio_Tiquete")
-                nodoInfo.InnerText = iDest.PrecioTiquete
-                .AppendChild(nodoInfo)
+                    nodoInfo = XMLBoletoComprado.CreateElement("Nombre_Cliente")
+                    nodoInfo.InnerText = iBoleto.NombreCliente
+                    .AppendChild(nodoInfo)
 
-                nodoInfo = XMLDestinos.CreateElement("Espacios_Disponibles")
-                nodoInfo.InnerText = iDest.CantidadEspaciosDispo
-                .AppendChild(nodoInfo)
-            End With
+                    nodoInfo = XMLBoletoComprado.CreateElement("Apellidos_Cliente")
+                    nodoInfo.InnerText = iBoleto.ApellidosCliente
+                    .AppendChild(nodoInfo)
 
-            NodoPadre.AppendChild(nodoDetalles)
-        Next
+                    nodoInfo = XMLBoletoComprado.CreateElement("Nacionalidad_Cliente")
+                    nodoInfo.InnerText = iBoleto.NacionalidadCliente
+                    .AppendChild(nodoInfo)
 
-        Dim iArchivoXML As New ClassXML
-        iArchivoXML.GuardarArchivoXML(XMLDestinos, URL)
+                    nodoInfo = XMLBoletoComprado.CreateElement("Pais_Destino")
+                    nodoInfo.InnerText = iBoleto.PaisDestino
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Fecha_Salida")
+                    nodoInfo.InnerText = iBoleto.FechaSalida
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Fecha_Regreso")
+                    nodoInfo.InnerText = iBoleto.FechaRegreso
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Hora_Salida")
+                    nodoInfo.InnerText = iBoleto.HoraSalida
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Cantidad_Dias")
+                    nodoInfo.InnerText = iBoleto.Cantidaddias
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Cantidad_Acompanantes")
+                    nodoInfo.InnerText = iBoleto.CantAcompanantes
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Nombre_Acompanante")
+                    nodoInfo.InnerText = iBoleto.NombreAcompanante
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Apellido_Acompanante")
+                    nodoInfo.InnerText = iBoleto.ApellidosAcompanante
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Identif_Acompanante")
+                    nodoInfo.InnerText = iBoleto.PaisDestino
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Nacionalidad_Acompanante")
+                    nodoInfo.InnerText = iBoleto.NacionalidadAcompanante
+                    .AppendChild(nodoInfo)
+
+                    nodoInfo = XMLBoletoComprado.CreateElement("Precio_Tiquete")
+                    nodoInfo.InnerText = calculoPrecioBoleto()
+                    .AppendChild(nodoInfo)
+
+
+                    .AppendChild(nodoInfo)
+                End With
+
+                NodoPadre.AppendChild(nodoDetalles)
+            Next
+
+            Dim iArchivoXML As New ClassXML
+            iArchivoXML.GuardarArchivoXML(XMLBoletoComprado, URL)
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 #End Region

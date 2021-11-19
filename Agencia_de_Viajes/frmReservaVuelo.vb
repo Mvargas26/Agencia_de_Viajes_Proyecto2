@@ -28,7 +28,7 @@ Public Class frmReservaVuelo
     '                 .FechaSalida = dtpikFechaSalida.Text,
     '                 .HoraSalida = dtpikHoraSalida.Text,
     '                 .PrecioTiquete = CInt(txtPrecioTiquete.Text),
-    '                 .CantidadEspaciosDispo = CInt(txtEspaciosdisponibles.Text)
+    '                 .CantidadEspaciosDispo = CInt(txtEspaciosDisponibles.Text)
     '                 })
 
     '                Dim iGuardarDestino As New Negocios.OPERACIONES
@@ -72,5 +72,9 @@ Public Class frmReservaVuelo
         Catch ex As Exception
             MessageBox.Show("Error al gaurdar informacion de destino en Interfaz")
         End Try
+    End Sub
+
+    Private Sub btnReserva_Click(sender As Object, e As EventArgs) Handles btnReserva.Click
+
     End Sub
 End Class

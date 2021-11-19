@@ -5,6 +5,8 @@ Public Class frmCompra
 #Region "Variables"
     'variables usadas para calculos antes de almacenar informacion 
     Dim objOperaciones As New OPERACIONES
+    Dim boletoCalculado As Boolean = False
+    Dim precioTiquete As Integer = 0
 
 #End Region
 
@@ -202,68 +204,8 @@ Public Class frmCompra
         End Try
     End Sub
 
-    Private Sub dtpFechaSalida_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaSalida.ValueChanged
-        Try
-            Dim strfechaSalida As Date = dtpFechaSalida.Value
-            Dim strFechaRegreso As Date = dtpFechaRegreso.Value
 
-            objOperaciones.Cantidaddias = DateDiff("d", strfechaSalida, strFechaRegreso)
 
-            If objOperaciones.Cantidaddias > 1 Then
-                MessageBox.Show(" La fecha de salida debe ser menor a la fecha de regreso")
-                txtCantidadDias.Text = ""
-                Exit Sub
-            Else
-                txtCantidadDias.Text = objOperaciones.Cantidaddias.ToString
-
-                If objOperaciones.Cantidaddias > 0 And objOperaciones.Cantidaddias < 5 Then
-                    chk0a5.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 5 And objOperaciones.Cantidaddias < 9 Then
-                    chk0a9.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 10 And objOperaciones.Cantidaddias < 14 Then
-                    chk10a14.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 14 And objOperaciones.Cantidaddias < 19 Then
-                    chk15a19.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 19 Then
-                    chkmas20.Checked = True
-                End If
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error al calcular Cantidad de Dias")
-        End Try
-    End Sub
-
-    Private Sub dtpFechaRegreso_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaRegreso.ValueChanged
-        Try
-            Dim strfechaSalida As Date = dtpFechaSalida.Value
-            Dim strFechaRegreso As Date = dtpFechaRegreso.Value
-
-            objOperaciones.Cantidaddias = DateDiff("d", strfechaSalida, strFechaRegreso)
-            txtCantidadDias.Text = objOperaciones.Cantidaddias.ToString
-
-            If objOperaciones.Cantidaddias > 1 Then
-                MessageBox.Show(" La fecha de salida debe ser menor a la fecha de regreso")
-                txtCantidadDias.Text = ""
-                Exit Sub
-            Else
-
-                If objOperaciones.Cantidaddias > 0 And objOperaciones.Cantidaddias < 5 Then
-                    chk0a5.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 5 And objOperaciones.Cantidaddias < 9 Then
-                    chk0a9.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 10 And objOperaciones.Cantidaddias < 14 Then
-                    chk10a14.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 14 And objOperaciones.Cantidaddias < 19 Then
-                    chk15a19.Checked = True
-                ElseIf objOperaciones.Cantidaddias > 19 Then
-                    chkmas20.Checked = True
-                End If
-
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error al calcular Cantidad de Dias")
-        End Try
-    End Sub
 
     Private Sub txtIdentifVuelo_TextChanged(sender As Object, e As EventArgs) Handles txtIdentifVuelo.TextChanged
         Try
@@ -276,11 +218,35 @@ Public Class frmCompra
 
     Private Sub btnCalcularMonto_Click(sender As Object, e As EventArgs) Handles btnCalcularMonto.Click
         Try
-            Dim boletoCalculado As Boolean = False
-
-
             If boletoCalculado = False Then
 
+                'Calculamos cantidad de dias
+                Dim strfechaSalida As Date = dtpFechaSalida.Value
+                Dim strFechaRegreso As Date = dtpFechaRegreso.Value
+                Dim resultadoDias As Long = 0
+
+                resultadoDias = DateDiff(DateInterval.Day, Now, strFechaRegreso)
+                objOperaciones.Cantidaddias = 1 + CInt(resultadoDias)
+
+                If objOperaciones.Cantidaddias < 1 Then
+                    MessageBox.Show("La fecha de regreso debe ser mayor a la de salida")
+                    txtCantidadDias.Text = "0"
+                    Exit Sub
+                Else
+                    txtCantidadDias.Text = objOperaciones.Cantidaddias.ToString
+
+                    If objOperaciones.Cantidaddias > 0 And objOperaciones.Cantidaddias < 6 Then
+                        chk0a5.Checked = True
+                    ElseIf objOperaciones.Cantidaddias > 4 And objOperaciones.Cantidaddias < 10 Then
+                        chk0a9.Checked = True
+                    ElseIf objOperaciones.Cantidaddias > 9 And objOperaciones.Cantidaddias < 15 Then
+                        chk10a14.Checked = True
+                    ElseIf objOperaciones.Cantidaddias > 14 And objOperaciones.Cantidaddias < 20 Then
+                        chk15a19.Checked = True
+                    ElseIf objOperaciones.Cantidaddias > 19 Then
+                        chkmas20.Checked = True
+                    End If
+                End If
 
                 If objOperaciones.Cantidaddias < 1 Then
                     MessageBox.Show("La fecha de salida debe ser menor a la fecha de regreso")
@@ -313,11 +279,14 @@ Public Class frmCompra
                             MessageBox.Show("Falta Cedula del acompañante")
                             Exit Sub
                         End If
+                    Else
+                        'si lleva 0 acompanantes le damos valor 0 a estos txt
+                        txtCedulaAcompanante.Text = "0"
+                        txtCantidadAcompanantes.Text = "0"
                     End If
                 End If
 
             End If 'fin Validaciones
-
 
             'Damos valor al precio del boleto dependdiendo del pasi  destino
             If cmbPaisDestino.SelectedIndex = 0 Then 'seleciono USA
@@ -331,11 +300,13 @@ Public Class frmCompra
                 objOperaciones.PrecioTiquete = 300
             End If
 
+
+
             Dim preci As String = objOperaciones.calculoPrecioBoleto.ToString
             txtPrecioTiquete.Text = "$" + preci
+            precioTiquete = CInt(preci)
 
-
-
+            boletoCalculado = True
 
 
 
@@ -344,7 +315,56 @@ Public Class frmCompra
         End Try
     End Sub
 
+    Private Sub btnComprarTiquete_Click(sender As Object, e As EventArgs) Handles btnComprarTiquete.Click
+
+        Try
+            If boletoCalculado = False Then
+                MessageBox.Show(" Por favor Calcule primero el Valor de su boleto")
+                Exit Sub
+            Else
+                Dim URL As String = Application.StartupPath
+                URL = My.Computer.FileSystem.CombinePath(URL, "ArchivosXML\BoletosComprados.XML".Trim)
+
+                If File.Exists(URL) Then
+                    Dim ListaBoletosComprados As New List(Of Negocios.OPERACIONES)
+                    'estas validaciones son necesarias en el caso que no lleve acompañantes, por la conversion mas delante
+                    If Not IsNumeric(txtCantidadAcompanantes.Text) Then
+                        txtCantidadAcompanantes.Text = 0
+                    End If
+                    If Not IsNumeric(txtCedulaAcompanante.Text) Then
+                            txtCedulaAcompanante.Text = 0
+                        End If
+
+                        ListaBoletosComprados.Add(New Negocios.OPERACIONES With {
+                    .IdentificacionCliente = CInt(Me.txtCedula.Text),
+                     .Vueloidentificador = Me.txtIdentifVuelo.Text,
+                     .NombreCliente = Me.txtNombre.Text,
+                     .ApellidosCliente = Me.txtApellidos.Text,
+                     .NacionalidadCliente = Me.txtNacionalidad.Text,
+                     .PaisDestino = Me.cmbPaisDestino.Text,
+                     .FechaSalida = dtpFechaSalida.Text,
+                     .FechaRegreso = dtpFechaRegreso.Text,
+                     .HoraSalida = dtpHoraSalida.Text,
+                     .Cantidaddias = CInt(txtCantidadDias.Text),
+                     .CantAcompanantes = CInt(txtCantidadAcompanantes.Text),
+                     .NombreAcompanante = txtNombreAcompanante.Text,
+                     .ApellidosAcompanante = txtApellidoAcompanante.Text,
+                     .IdentificacionAcompanante = CInt(txtCedulaAcompanante.Text),
+                    .NacionalidadAcompanante = txtNAcionalidadAcompanante.Text,
+                    .PrecioTiquete = precioTiquete})
 
 
+                        Dim guardarCompra As New OPERACIONES
+                        guardarCompra.AlmacenaXML(URL, ListaBoletosComprados)
+                        MessageBox.Show("Almacenada su compra correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("No existe la ruta para guardar el archivo")
+                End If
 
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text)
+        End Try
+
+    End Sub
 End Class '//// FIN CLASSSSSSSSS //////////////////////////////////////

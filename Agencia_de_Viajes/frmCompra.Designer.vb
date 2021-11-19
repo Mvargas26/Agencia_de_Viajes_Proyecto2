@@ -117,7 +117,7 @@ Partial Class frmCompra
         Me.txtNAcionalidadAcompanante.Location = New System.Drawing.Point(182, 172)
         Me.txtNAcionalidadAcompanante.Name = "txtNAcionalidadAcompanante"
         Me.txtNAcionalidadAcompanante.Size = New System.Drawing.Size(204, 27)
-        Me.txtNAcionalidadAcompanante.TabIndex = 7
+        Me.txtNAcionalidadAcompanante.TabIndex = 14
         '
         'lblnacionalidadAcompanante
         '
@@ -145,7 +145,7 @@ Partial Class frmCompra
         Me.txtCedulaAcompanante.Location = New System.Drawing.Point(182, 126)
         Me.txtCedulaAcompanante.Name = "txtCedulaAcompanante"
         Me.txtCedulaAcompanante.Size = New System.Drawing.Size(204, 27)
-        Me.txtCedulaAcompanante.TabIndex = 4
+        Me.txtCedulaAcompanante.TabIndex = 13
         '
         'txtApellidoAcompanante
         '
@@ -153,7 +153,7 @@ Partial Class frmCompra
         Me.txtApellidoAcompanante.Location = New System.Drawing.Point(124, 79)
         Me.txtApellidoAcompanante.Name = "txtApellidoAcompanante"
         Me.txtApellidoAcompanante.Size = New System.Drawing.Size(262, 27)
-        Me.txtApellidoAcompanante.TabIndex = 3
+        Me.txtApellidoAcompanante.TabIndex = 12
         '
         'lblApellidoAcompanante
         '
@@ -171,7 +171,7 @@ Partial Class frmCompra
         Me.txtNombreAcompanante.Location = New System.Drawing.Point(124, 36)
         Me.txtNombreAcompanante.Name = "txtNombreAcompanante"
         Me.txtNombreAcompanante.Size = New System.Drawing.Size(262, 27)
-        Me.txtNombreAcompanante.TabIndex = 1
+        Me.txtNombreAcompanante.TabIndex = 11
         '
         'lblNombreAcompanante
         '
@@ -233,7 +233,7 @@ Partial Class frmCompra
         Me.txtCantidadAcompanantes.Location = New System.Drawing.Point(298, 481)
         Me.txtCantidadAcompanantes.Name = "txtCantidadAcompanantes"
         Me.txtCantidadAcompanantes.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadAcompanantes.TabIndex = 21
+        Me.txtCantidadAcompanantes.TabIndex = 10
         Me.txtCantidadAcompanantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCantAcompanantes
@@ -263,7 +263,7 @@ Partial Class frmCompra
         Me.txtCantidadDias.Name = "txtCantidadDias"
         Me.txtCantidadDias.ReadOnly = True
         Me.txtCantidadDias.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadDias.TabIndex = 19
+        Me.txtCantidadDias.TabIndex = 9
         Me.txtCantidadDias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblIdentfVuelo
@@ -293,7 +293,7 @@ Partial Class frmCompra
         Me.dtpFechaSalida.Location = New System.Drawing.Point(241, 284)
         Me.dtpFechaSalida.Name = "dtpFechaSalida"
         Me.dtpFechaSalida.Size = New System.Drawing.Size(145, 30)
-        Me.dtpFechaSalida.TabIndex = 17
+        Me.dtpFechaSalida.TabIndex = 6
         '
         'lblFechaSalida
         '
@@ -308,10 +308,10 @@ Partial Class frmCompra
         'dtpHoraSalida
         '
         Me.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpHoraSalida.Location = New System.Drawing.Point(315, 395)
+        Me.dtpHoraSalida.Location = New System.Drawing.Point(314, 395)
         Me.dtpHoraSalida.Name = "dtpHoraSalida"
-        Me.dtpHoraSalida.Size = New System.Drawing.Size(71, 28)
-        Me.dtpHoraSalida.TabIndex = 7
+        Me.dtpHoraSalida.Size = New System.Drawing.Size(72, 28)
+        Me.dtpHoraSalida.TabIndex = 8
         Me.dtpHoraSalida.Value = New Date(2021, 10, 31, 0, 0, 0, 0)
         '
         'lblHoraSalida
@@ -326,12 +326,13 @@ Partial Class frmCompra
         '
         'cmbPaisDestino
         '
+        Me.cmbPaisDestino.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmbPaisDestino.FormattingEnabled = True
         Me.cmbPaisDestino.Items.AddRange(New Object() {"U.S.A", "Brasil", "México"})
         Me.cmbPaisDestino.Location = New System.Drawing.Point(184, 234)
         Me.cmbPaisDestino.Name = "cmbPaisDestino"
         Me.cmbPaisDestino.Size = New System.Drawing.Size(202, 29)
-        Me.cmbPaisDestino.TabIndex = 3
+        Me.cmbPaisDestino.TabIndex = 5
         '
         'dtpFechaRegreso
         '
@@ -340,7 +341,7 @@ Partial Class frmCompra
         Me.dtpFechaRegreso.Location = New System.Drawing.Point(241, 344)
         Me.dtpFechaRegreso.Name = "dtpFechaRegreso"
         Me.dtpFechaRegreso.Size = New System.Drawing.Size(145, 30)
-        Me.dtpFechaRegreso.TabIndex = 9
+        Me.dtpFechaRegreso.TabIndex = 7
         '
         'lblPaisDestino
         '
@@ -368,7 +369,7 @@ Partial Class frmCompra
         Me.txtNacionalidad.Location = New System.Drawing.Point(182, 172)
         Me.txtNacionalidad.Name = "txtNacionalidad"
         Me.txtNacionalidad.Size = New System.Drawing.Size(204, 27)
-        Me.txtNacionalidad.TabIndex = 7
+        Me.txtNacionalidad.TabIndex = 4
         '
         'lblNacionalidad
         '
@@ -396,7 +397,7 @@ Partial Class frmCompra
         Me.txtCedula.Location = New System.Drawing.Point(182, 126)
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(204, 27)
-        Me.txtCedula.TabIndex = 4
+        Me.txtCedula.TabIndex = 3
         '
         'txtApellidos
         '
@@ -404,7 +405,7 @@ Partial Class frmCompra
         Me.txtApellidos.Location = New System.Drawing.Point(124, 79)
         Me.txtApellidos.Name = "txtApellidos"
         Me.txtApellidos.Size = New System.Drawing.Size(262, 27)
-        Me.txtApellidos.TabIndex = 3
+        Me.txtApellidos.TabIndex = 2
         '
         'lblApellidos
         '
@@ -495,7 +496,7 @@ Partial Class frmCompra
         Me.chkFastTrack.Location = New System.Drawing.Point(251, 279)
         Me.chkFastTrack.Name = "chkFastTrack"
         Me.chkFastTrack.Size = New System.Drawing.Size(135, 26)
-        Me.chkFastTrack.TabIndex = 26
+        Me.chkFastTrack.TabIndex = 21
         Me.chkFastTrack.Text = "Fast Track "
         Me.chkFastTrack.UseVisualStyleBackColor = True
         '
@@ -505,7 +506,7 @@ Partial Class frmCompra
         Me.chkInternetIlim.Location = New System.Drawing.Point(10, 279)
         Me.chkInternetIlim.Name = "chkInternetIlim"
         Me.chkInternetIlim.Size = New System.Drawing.Size(186, 26)
-        Me.chkInternetIlim.TabIndex = 25
+        Me.chkInternetIlim.TabIndex = 20
         Me.chkInternetIlim.Text = "Internet Ilimitado"
         Me.chkInternetIlim.UseVisualStyleBackColor = True
         '
@@ -515,7 +516,7 @@ Partial Class frmCompra
         Me.chkZonaExLegrom.Location = New System.Drawing.Point(211, 45)
         Me.chkZonaExLegrom.Name = "chkZonaExLegrom"
         Me.chkZonaExLegrom.Size = New System.Drawing.Size(209, 26)
-        Me.chkZonaExLegrom.TabIndex = 24
+        Me.chkZonaExLegrom.TabIndex = 19
         Me.chkZonaExLegrom.Text = "Zona Extra Legrom"
         Me.chkZonaExLegrom.UseVisualStyleBackColor = True
         '
@@ -525,7 +526,7 @@ Partial Class frmCompra
         Me.chkZonaPrefe.Location = New System.Drawing.Point(10, 45)
         Me.chkZonaPrefe.Name = "chkZonaPrefe"
         Me.chkZonaPrefe.Size = New System.Drawing.Size(195, 26)
-        Me.chkZonaPrefe.TabIndex = 23
+        Me.chkZonaPrefe.TabIndex = 28
         Me.chkZonaPrefe.Text = "Zona Preferencial"
         Me.chkZonaPrefe.UseVisualStyleBackColor = True
         '
@@ -723,7 +724,7 @@ Partial Class frmCompra
         Me.chk25k.Location = New System.Drawing.Point(349, 45)
         Me.chk25k.Name = "chk25k"
         Me.chk25k.Size = New System.Drawing.Size(106, 26)
-        Me.chk25k.TabIndex = 25
+        Me.chk25k.TabIndex = 17
         Me.chk25k.Text = "25 Kilos"
         Me.chk25k.UseVisualStyleBackColor = True
         '
@@ -733,7 +734,7 @@ Partial Class frmCompra
         Me.chk20k.Location = New System.Drawing.Point(177, 45)
         Me.chk20k.Name = "chk20k"
         Me.chk20k.Size = New System.Drawing.Size(106, 26)
-        Me.chk20k.TabIndex = 24
+        Me.chk20k.TabIndex = 16
         Me.chk20k.Text = "20 Kilos"
         Me.chk20k.UseVisualStyleBackColor = True
         '
@@ -743,7 +744,7 @@ Partial Class frmCompra
         Me.chk14k.Location = New System.Drawing.Point(10, 45)
         Me.chk14k.Name = "chk14k"
         Me.chk14k.Size = New System.Drawing.Size(106, 26)
-        Me.chk14k.TabIndex = 23
+        Me.chk14k.TabIndex = 15
         Me.chk14k.Text = "14 Kilos"
         Me.chk14k.UseVisualStyleBackColor = True
         '
@@ -767,7 +768,7 @@ Partial Class frmCompra
         Me.txtPrecioTiquete.Name = "txtPrecioTiquete"
         Me.txtPrecioTiquete.ReadOnly = True
         Me.txtPrecioTiquete.Size = New System.Drawing.Size(141, 27)
-        Me.txtPrecioTiquete.TabIndex = 34
+        Me.txtPrecioTiquete.TabIndex = 22
         '
         'lblPrecioTiquete
         '
