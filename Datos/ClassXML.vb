@@ -6,4 +6,9 @@ Public Class ClassXML
     End Sub
 
 
+    Public Function LeerArchivoXML(ByVal URL As String) 'leemos como documento XML el archivo
+        Dim iArchivo As New XmlTextReader(URL)
+
+        Return iArchivo
+    End Function
 End Class

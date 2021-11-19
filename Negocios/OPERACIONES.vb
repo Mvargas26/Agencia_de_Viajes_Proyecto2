@@ -1,6 +1,7 @@
 ﻿
 Imports Datos
 Imports System.Xml
+Imports System.IO
 Public Class OPERACIONES
 
 #Region "Variables"
@@ -278,7 +279,6 @@ Public Class OPERACIONES
     Public Sub AlmacenaXML(ByVal URL As String, ByVal ListaBoletos As List(Of OPERACIONES))
         Try
 
-
             Dim XMLBoletoComprado As New XmlDocument
 
             Dim NodoPadre As XmlNode = XMLBoletoComprado.CreateElement("Boletos")
@@ -341,7 +341,7 @@ Public Class OPERACIONES
                     .AppendChild(nodoInfo)
 
                     nodoInfo = XMLBoletoComprado.CreateElement("Identif_Acompanante")
-                    nodoInfo.InnerText = iBoleto.PaisDestino
+                    nodoInfo.InnerText = iBoleto.IdentificacionAcompanante
                     .AppendChild(nodoInfo)
 
                     nodoInfo = XMLBoletoComprado.CreateElement("Nacionalidad_Acompanante")
@@ -349,7 +349,7 @@ Public Class OPERACIONES
                     .AppendChild(nodoInfo)
 
                     nodoInfo = XMLBoletoComprado.CreateElement("Precio_Tiquete")
-                    nodoInfo.InnerText = calculoPrecioBoleto()
+                    nodoInfo.InnerText = iBoleto.PrecioTiquete
                     .AppendChild(nodoInfo)
 
 
@@ -363,10 +363,26 @@ Public Class OPERACIONES
             iArchivoXML.GuardarArchivoXML(XMLBoletoComprado, URL)
 
         Catch ex As Exception
-
+            Console.Write("Error al crear el xml en Negocios-Operaciones")
         End Try
     End Sub
 
+
+    Public Function LeerXML(ByVal URL As String) As ArrayList
+        Try
+            Dim aNombreCliente, aApellidosCliente, aIdentificacionCliente, aNacionalidadCliente, aValorMaletasExtra,
+         aPesoMaleta, aVueloidentificador, aPaisDestino, aFechaSalida, aFechaRegreso, aHoraSalida,
+         aPrecioTiquete, aCantidaddias, acantAcompanantes, adescuento, aextrasZonaPrefe, aextraZonaLegrom, aextraInternet,
+          aextrafasttrack, aNombreAcompanante, aApellidosAcompanante, aIdentificacionAcompanante, aNacionalidadAcompanante As Integer
+
+            Dim arrBoletos As New ArrayList
+
+            Return arrBoletos
+
+        Catch ex As Exception
+            Throw New Exception("Error al leer el archivo XML en Operaciones")
+        End Try
+    End Function
 #End Region
 
 

@@ -204,9 +204,6 @@ Public Class frmCompra
         End Try
     End Sub
 
-
-
-
     Private Sub txtIdentifVuelo_TextChanged(sender As Object, e As EventArgs) Handles txtIdentifVuelo.TextChanged
         Try
             objOperaciones.Vueloidentificador = txtIdentifVuelo.Text
@@ -300,8 +297,7 @@ Public Class frmCompra
                 objOperaciones.PrecioTiquete = 300
             End If
 
-
-
+            'almacenamos el costo del tiquete como entero y como string ya que lo usaremos de las 2 formas
             Dim preci As String = objOperaciones.calculoPrecioBoleto.ToString
             txtPrecioTiquete.Text = "$" + preci
             precioTiquete = CInt(preci)
