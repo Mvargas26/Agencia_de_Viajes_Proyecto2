@@ -300,7 +300,7 @@ Public Class frmReservaVuelo
                     Dim guardarCompra As New OPERACIONES
                     guardarCompra.AlmacenaXML(URL, ListaBoletosComprados)
                     MessageBox.Show("Almacenada su compra correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
+                Else ' S ya el archivo existe, solo añade el nodo
                     Dim ListaBoletosComprados As New List(Of Negocios.OPERACIONES)
 
                     If Not IsNumeric(txtCantidadAcompanantes.Text) Then
@@ -329,7 +329,7 @@ Public Class frmReservaVuelo
                 .PrecioTiquete = precioTiquete})
 
                     Dim guardarCompra As New OPERACIONES
-                    guardarCompra.insertarNodo(URL)
+                    guardarCompra.insertarNodo(URL, ListaBoletosComprados)
 
                     MessageBox.Show("Almacenada su compra correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If

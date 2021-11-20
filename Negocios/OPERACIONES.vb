@@ -368,7 +368,7 @@ Public Class OPERACIONES
     End Sub
 
 
-    Public Sub insertarNodo(ByVal URL As String)
+    Public Sub insertarNodo(ByVal URL As String, ByVal ListaBoletos As List(Of OPERACIONES))
 
         Dim XMLReservas As New XmlDocument
 
@@ -376,14 +376,60 @@ Public Class OPERACIONES
         Dim ultimoNodo As XmlNode = XMLReservas.DocumentElement.LastChild
         Dim Detalles As XmlElement = XMLReservas.CreateElement("Detalles")
 
+
         Dim Identificacion_Cliente As XmlElement = XMLReservas.CreateElement("Identificacion_Cliente")
         Dim Identificador_Vuelo As XmlElement = XMLReservas.CreateElement("Identificador_Vuelo")
+        Dim Nombre_Cliente As XmlElement = XMLReservas.CreateElement("Nombre_Cliente")
+        Dim Apellidos_Cliente As XmlElement = XMLReservas.CreateElement("Apellidos_Cliente")
+        Dim Nacionalidad_Cliente As XmlElement = XMLReservas.CreateElement("Nacionalidad_Cliente")
+        Dim Pais_Destino As XmlElement = XMLReservas.CreateElement("Pais_Destino")
+        Dim Fecha_Salida As XmlElement = XMLReservas.CreateElement("Fecha_Salida")
+        Dim Fecha_Regreso As XmlElement = XMLReservas.CreateElement("Fecha_Regreso")
+        Dim Hora_Salida As XmlElement = XMLReservas.CreateElement("Hora_Salida")
+        Dim Cantidad_Dias As XmlElement = XMLReservas.CreateElement("Cantidad_Dias")
+        Dim Cantidad_Acompanantes As XmlElement = XMLReservas.CreateElement("Cantidad_Acompanantes")
+        Dim Nombre_Acompanante As XmlElement = XMLReservas.CreateElement("Nombre_Acompanante")
+        Dim Apellido_Acompanante As XmlElement = XMLReservas.CreateElement("Apellido_Acompanante")
+        Dim Identif_Acompanante As XmlElement = XMLReservas.CreateElement("Identif_Acompanante")
+        Dim Nacionalidad_Acompanante As XmlElement = XMLReservas.CreateElement("Nacionalidad_Acompanante")
+        Dim Precio_Tiquete As XmlElement = XMLReservas.CreateElement("Precio_Tiquete")
 
-        Identificacion_Cliente.InnerText = IdentificacionCliente.ToString.Trim
-        Identificador_Vuelo.InnerText = Vueloidentificador.ToString.Trim
+
+        For Each iBoleto As OPERACIONES In ListaBoletos
+            Identificacion_Cliente.InnerText = iBoleto.IdentificacionCliente.ToString.Trim
+            Identificador_Vuelo.InnerText = iBoleto.Vueloidentificador.ToString.Trim
+            Nombre_Cliente.InnerText = iBoleto.NombreCliente.Trim
+            Apellidos_Cliente.InnerText = iBoleto.ApellidosCliente.Trim
+            Nacionalidad_Cliente.InnerText = iBoleto.NacionalidadCliente.Trim
+            Pais_Destino.InnerText = iBoleto.PaisDestino.Trim
+            Fecha_Salida.InnerText = iBoleto.FechaSalida.Trim
+            Fecha_Regreso.InnerText = iBoleto.FechaRegreso.Trim
+            Hora_Salida.InnerText = iBoleto.HoraSalida.Trim
+            Cantidad_Dias.InnerText = iBoleto.Cantidaddias.ToString.Trim
+            Cantidad_Acompanantes.InnerText = iBoleto.CantAcompanantes.ToString.Trim
+            Nombre_Acompanante.InnerText = iBoleto.NombreAcompanante.Trim
+            Apellido_Acompanante.InnerText = iBoleto.ApellidosAcompanante.Trim
+            Identif_Acompanante.InnerText = iBoleto.IdentificacionAcompanante.ToString.Trim
+            Nacionalidad_Acompanante.InnerText = iBoleto.NacionalidadAcompanante.Trim
+            Precio_Tiquete.InnerText = iBoleto.PrecioTiquete.ToString.Trim
+        Next
 
         Detalles.AppendChild(Identificacion_Cliente)
         Detalles.AppendChild(Identificador_Vuelo)
+        Detalles.AppendChild(Nombre_Cliente)
+        Detalles.AppendChild(Apellidos_Cliente)
+        Detalles.AppendChild(Nacionalidad_Cliente)
+        Detalles.AppendChild(Pais_Destino)
+        Detalles.AppendChild(Fecha_Salida)
+        Detalles.AppendChild(Fecha_Regreso)
+        Detalles.AppendChild(Hora_Salida)
+        Detalles.AppendChild(Cantidad_Dias)
+        Detalles.AppendChild(Cantidad_Acompanantes)
+        Detalles.AppendChild(Nombre_Acompanante)
+        Detalles.AppendChild(Apellido_Acompanante)
+        Detalles.AppendChild(Identif_Acompanante)
+        Detalles.AppendChild(Nacionalidad_Acompanante)
+        Detalles.AppendChild(Precio_Tiquete)
 
         XMLReservas.DocumentElement.InsertAfter(Detalles, ultimoNodo)
         XMLReservas.Save(URL)

@@ -88,11 +88,13 @@ Partial Class frmConsultarReserva
         '
         'dgvDatos
         '
+        Me.dgvDatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colIdentCliente, Me.colIdentVuelo, Me.colNomClient, Me.ApellClient, Me.colNacionClient, Me.colPaisDestino, Me.colFechaSalida, Me.colFechaRegreso, Me.colHoraSalida, Me.colCantDias, Me.colCantAcomp, Me.colNombAcomp, Me.colApellidoAcomp, Me.colIdentfAcomp, Me.colNacionAcomp, Me.colPrecioTiquete})
         Me.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvDatos.Location = New System.Drawing.Point(0, 100)
         Me.dgvDatos.Name = "dgvDatos"
+        Me.dgvDatos.ReadOnly = True
         Me.dgvDatos.RowHeadersWidth = 51
         Me.dgvDatos.RowTemplate.Height = 24
         Me.dgvDatos.Size = New System.Drawing.Size(1226, 360)
@@ -103,6 +105,7 @@ Partial Class frmConsultarReserva
         Me.colIdentCliente.HeaderText = "Cedula Cliente"
         Me.colIdentCliente.MinimumWidth = 6
         Me.colIdentCliente.Name = "colIdentCliente"
+        Me.colIdentCliente.ReadOnly = True
         Me.colIdentCliente.Width = 125
         '
         'colIdentVuelo
@@ -110,6 +113,7 @@ Partial Class frmConsultarReserva
         Me.colIdentVuelo.HeaderText = "Identificador Vuelo"
         Me.colIdentVuelo.MinimumWidth = 6
         Me.colIdentVuelo.Name = "colIdentVuelo"
+        Me.colIdentVuelo.ReadOnly = True
         Me.colIdentVuelo.Width = 125
         '
         'colNomClient
@@ -117,6 +121,7 @@ Partial Class frmConsultarReserva
         Me.colNomClient.HeaderText = "Nombre Cliente"
         Me.colNomClient.MinimumWidth = 6
         Me.colNomClient.Name = "colNomClient"
+        Me.colNomClient.ReadOnly = True
         Me.colNomClient.Width = 125
         '
         'ApellClient
@@ -124,6 +129,7 @@ Partial Class frmConsultarReserva
         Me.ApellClient.HeaderText = "Apellidos Cliente"
         Me.ApellClient.MinimumWidth = 6
         Me.ApellClient.Name = "ApellClient"
+        Me.ApellClient.ReadOnly = True
         Me.ApellClient.Width = 125
         '
         'colNacionClient
@@ -131,6 +137,7 @@ Partial Class frmConsultarReserva
         Me.colNacionClient.HeaderText = "Nacionalidad Cliente"
         Me.colNacionClient.MinimumWidth = 6
         Me.colNacionClient.Name = "colNacionClient"
+        Me.colNacionClient.ReadOnly = True
         Me.colNacionClient.Width = 125
         '
         'colPaisDestino
@@ -138,6 +145,7 @@ Partial Class frmConsultarReserva
         Me.colPaisDestino.HeaderText = "Pais Destino"
         Me.colPaisDestino.MinimumWidth = 6
         Me.colPaisDestino.Name = "colPaisDestino"
+        Me.colPaisDestino.ReadOnly = True
         Me.colPaisDestino.Width = 125
         '
         'colFechaSalida
@@ -145,6 +153,7 @@ Partial Class frmConsultarReserva
         Me.colFechaSalida.HeaderText = "Fecha Salida"
         Me.colFechaSalida.MinimumWidth = 6
         Me.colFechaSalida.Name = "colFechaSalida"
+        Me.colFechaSalida.ReadOnly = True
         Me.colFechaSalida.Width = 125
         '
         'colFechaRegreso
@@ -152,6 +161,7 @@ Partial Class frmConsultarReserva
         Me.colFechaRegreso.HeaderText = "Fecha Regreso"
         Me.colFechaRegreso.MinimumWidth = 6
         Me.colFechaRegreso.Name = "colFechaRegreso"
+        Me.colFechaRegreso.ReadOnly = True
         Me.colFechaRegreso.Width = 125
         '
         'colHoraSalida
@@ -159,6 +169,7 @@ Partial Class frmConsultarReserva
         Me.colHoraSalida.HeaderText = "Hora Salida"
         Me.colHoraSalida.MinimumWidth = 6
         Me.colHoraSalida.Name = "colHoraSalida"
+        Me.colHoraSalida.ReadOnly = True
         Me.colHoraSalida.Width = 125
         '
         'colCantDias
@@ -166,6 +177,7 @@ Partial Class frmConsultarReserva
         Me.colCantDias.HeaderText = "Cantidad Dias"
         Me.colCantDias.MinimumWidth = 6
         Me.colCantDias.Name = "colCantDias"
+        Me.colCantDias.ReadOnly = True
         Me.colCantDias.Width = 125
         '
         'colCantAcomp
@@ -173,6 +185,7 @@ Partial Class frmConsultarReserva
         Me.colCantAcomp.HeaderText = "Cantidad Acompañantes"
         Me.colCantAcomp.MinimumWidth = 6
         Me.colCantAcomp.Name = "colCantAcomp"
+        Me.colCantAcomp.ReadOnly = True
         Me.colCantAcomp.Width = 125
         '
         'colNombAcomp
@@ -180,6 +193,7 @@ Partial Class frmConsultarReserva
         Me.colNombAcomp.HeaderText = "Nombre Acompañante"
         Me.colNombAcomp.MinimumWidth = 6
         Me.colNombAcomp.Name = "colNombAcomp"
+        Me.colNombAcomp.ReadOnly = True
         Me.colNombAcomp.Width = 125
         '
         'colApellidoAcomp
@@ -187,6 +201,7 @@ Partial Class frmConsultarReserva
         Me.colApellidoAcomp.HeaderText = "Apellido Acompañante"
         Me.colApellidoAcomp.MinimumWidth = 6
         Me.colApellidoAcomp.Name = "colApellidoAcomp"
+        Me.colApellidoAcomp.ReadOnly = True
         Me.colApellidoAcomp.Width = 125
         '
         'colIdentfAcomp
@@ -194,6 +209,7 @@ Partial Class frmConsultarReserva
         Me.colIdentfAcomp.HeaderText = "Cedula Acompañante"
         Me.colIdentfAcomp.MinimumWidth = 6
         Me.colIdentfAcomp.Name = "colIdentfAcomp"
+        Me.colIdentfAcomp.ReadOnly = True
         Me.colIdentfAcomp.Width = 125
         '
         'colNacionAcomp
@@ -201,6 +217,7 @@ Partial Class frmConsultarReserva
         Me.colNacionAcomp.HeaderText = "Nacionalidad Acompañante"
         Me.colNacionAcomp.MinimumWidth = 6
         Me.colNacionAcomp.Name = "colNacionAcomp"
+        Me.colNacionAcomp.ReadOnly = True
         Me.colNacionAcomp.Width = 125
         '
         'colPrecioTiquete
@@ -208,6 +225,7 @@ Partial Class frmConsultarReserva
         Me.colPrecioTiquete.HeaderText = "Precio Tiquete"
         Me.colPrecioTiquete.MinimumWidth = 6
         Me.colPrecioTiquete.Name = "colPrecioTiquete"
+        Me.colPrecioTiquete.ReadOnly = True
         Me.colPrecioTiquete.Width = 125
         '
         'frmConsultarReserva

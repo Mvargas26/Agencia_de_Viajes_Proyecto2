@@ -111,7 +111,7 @@ Partial Class frmReservaVuelo
         Me.cmbPaisDestino.Location = New System.Drawing.Point(184, 234)
         Me.cmbPaisDestino.Name = "cmbPaisDestino"
         Me.cmbPaisDestino.Size = New System.Drawing.Size(202, 29)
-        Me.cmbPaisDestino.TabIndex = 3
+        Me.cmbPaisDestino.TabIndex = 5
         '
         'lblHoraSalida
         '
@@ -129,7 +129,7 @@ Partial Class frmReservaVuelo
         Me.dtpHoraSalida.Location = New System.Drawing.Point(315, 395)
         Me.dtpHoraSalida.Name = "dtpHoraSalida"
         Me.dtpHoraSalida.Size = New System.Drawing.Size(71, 28)
-        Me.dtpHoraSalida.TabIndex = 7
+        Me.dtpHoraSalida.TabIndex = 8
         Me.dtpHoraSalida.Value = New Date(2021, 10, 31, 0, 0, 0, 0)
         '
         'lblPrecioTiquete
@@ -195,7 +195,7 @@ Partial Class frmReservaVuelo
         Me.txtCantidadAcompanantes.Location = New System.Drawing.Point(298, 481)
         Me.txtCantidadAcompanantes.Name = "txtCantidadAcompanantes"
         Me.txtCantidadAcompanantes.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadAcompanantes.TabIndex = 21
+        Me.txtCantidadAcompanantes.TabIndex = 10
         '
         'lblCantAcompanantes
         '
@@ -214,7 +214,7 @@ Partial Class frmReservaVuelo
         Me.txtCantidadDias.Location = New System.Drawing.Point(298, 435)
         Me.txtCantidadDias.Name = "txtCantidadDias"
         Me.txtCantidadDias.Size = New System.Drawing.Size(89, 27)
-        Me.txtCantidadDias.TabIndex = 19
+        Me.txtCantidadDias.TabIndex = 9
         '
         'lblCantDias
         '
@@ -233,7 +233,7 @@ Partial Class frmReservaVuelo
         Me.dtpFechaSalida.Location = New System.Drawing.Point(241, 284)
         Me.dtpFechaSalida.Name = "dtpFechaSalida"
         Me.dtpFechaSalida.Size = New System.Drawing.Size(145, 30)
-        Me.dtpFechaSalida.TabIndex = 17
+        Me.dtpFechaSalida.TabIndex = 6
         '
         'lblFechaSalida
         '
@@ -252,7 +252,7 @@ Partial Class frmReservaVuelo
         Me.dtpFechaRegreso.Location = New System.Drawing.Point(241, 344)
         Me.dtpFechaRegreso.Name = "dtpFechaRegreso"
         Me.dtpFechaRegreso.Size = New System.Drawing.Size(145, 30)
-        Me.dtpFechaRegreso.TabIndex = 9
+        Me.dtpFechaRegreso.TabIndex = 7
         '
         'lblFechaRegreso
         '
@@ -270,7 +270,7 @@ Partial Class frmReservaVuelo
         Me.txtNacionalidad.Location = New System.Drawing.Point(182, 172)
         Me.txtNacionalidad.Name = "txtNacionalidad"
         Me.txtNacionalidad.Size = New System.Drawing.Size(204, 27)
-        Me.txtNacionalidad.TabIndex = 7
+        Me.txtNacionalidad.TabIndex = 4
         '
         'lblNacionalidad
         '
@@ -298,7 +298,7 @@ Partial Class frmReservaVuelo
         Me.txtCedula.Location = New System.Drawing.Point(182, 126)
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(204, 27)
-        Me.txtCedula.TabIndex = 4
+        Me.txtCedula.TabIndex = 3
         '
         'txtApellidos
         '
@@ -306,7 +306,7 @@ Partial Class frmReservaVuelo
         Me.txtApellidos.Location = New System.Drawing.Point(124, 79)
         Me.txtApellidos.Name = "txtApellidos"
         Me.txtApellidos.Size = New System.Drawing.Size(262, 27)
-        Me.txtApellidos.TabIndex = 3
+        Me.txtApellidos.TabIndex = 2
         '
         'lblApellidos
         '
@@ -344,7 +344,7 @@ Partial Class frmReservaVuelo
         Me.btnCalcularMonto.Location = New System.Drawing.Point(42, 923)
         Me.btnCalcularMonto.Name = "btnCalcularMonto"
         Me.btnCalcularMonto.Size = New System.Drawing.Size(292, 43)
-        Me.btnCalcularMonto.TabIndex = 37
+        Me.btnCalcularMonto.TabIndex = 19
         Me.btnCalcularMonto.Text = "Calcular Monto Tiquete"
         Me.btnCalcularMonto.UseVisualStyleBackColor = False
         '
@@ -356,7 +356,7 @@ Partial Class frmReservaVuelo
         Me.Button2.Location = New System.Drawing.Point(418, 923)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(235, 43)
-        Me.Button2.TabIndex = 39
+        Me.Button2.TabIndex = 20
         Me.Button2.Text = "Comprar Tiquetes"
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -647,7 +647,7 @@ Partial Class frmReservaVuelo
         Me.chkFastTrack.Location = New System.Drawing.Point(251, 279)
         Me.chkFastTrack.Name = "chkFastTrack"
         Me.chkFastTrack.Size = New System.Drawing.Size(135, 26)
-        Me.chkFastTrack.TabIndex = 21
+        Me.chkFastTrack.TabIndex = 18
         Me.chkFastTrack.Text = "Fast Track "
         Me.chkFastTrack.UseVisualStyleBackColor = True
         '
@@ -657,7 +657,7 @@ Partial Class frmReservaVuelo
         Me.chkInternetIlim.Location = New System.Drawing.Point(10, 279)
         Me.chkInternetIlim.Name = "chkInternetIlim"
         Me.chkInternetIlim.Size = New System.Drawing.Size(186, 26)
-        Me.chkInternetIlim.TabIndex = 20
+        Me.chkInternetIlim.TabIndex = 17
         Me.chkInternetIlim.Text = "Internet Ilimitado"
         Me.chkInternetIlim.UseVisualStyleBackColor = True
         '
@@ -667,7 +667,7 @@ Partial Class frmReservaVuelo
         Me.chkZonaExLegrom.Location = New System.Drawing.Point(211, 45)
         Me.chkZonaExLegrom.Name = "chkZonaExLegrom"
         Me.chkZonaExLegrom.Size = New System.Drawing.Size(209, 26)
-        Me.chkZonaExLegrom.TabIndex = 19
+        Me.chkZonaExLegrom.TabIndex = 16
         Me.chkZonaExLegrom.Text = "Zona Extra Legrom"
         Me.chkZonaExLegrom.UseVisualStyleBackColor = True
         '
@@ -677,7 +677,7 @@ Partial Class frmReservaVuelo
         Me.chkZonaPrefe.Location = New System.Drawing.Point(10, 45)
         Me.chkZonaPrefe.Name = "chkZonaPrefe"
         Me.chkZonaPrefe.Size = New System.Drawing.Size(195, 26)
-        Me.chkZonaPrefe.TabIndex = 28
+        Me.chkZonaPrefe.TabIndex = 15
         Me.chkZonaPrefe.Text = "Zona Preferencial"
         Me.chkZonaPrefe.UseVisualStyleBackColor = True
         '
@@ -698,7 +698,8 @@ Partial Class frmReservaVuelo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1209, 1012)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1173, 1055)
         Me.Controls.Add(Me.grpExtras)
         Me.Controls.Add(Me.grpCantDias)
         Me.Controls.Add(Me.Button2)
