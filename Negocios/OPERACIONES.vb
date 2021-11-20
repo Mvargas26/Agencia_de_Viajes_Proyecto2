@@ -368,6 +368,30 @@ Public Class OPERACIONES
     End Sub
 
 
+    Public Sub insertarNodo(ByVal URL As String)
+
+        Dim XMLReservas As New XmlDocument
+
+        XMLReservas.Load(URL)
+        Dim ultimoNodo As XmlNode = XMLReservas.DocumentElement.LastChild
+        Dim Detalles As XmlElement = XMLReservas.CreateElement("Detalles")
+
+        Dim Identificacion_Cliente As XmlElement = XMLReservas.CreateElement("Identificacion_Cliente")
+        Dim Identificador_Vuelo As XmlElement = XMLReservas.CreateElement("Identificador_Vuelo")
+
+        Identificacion_Cliente.InnerText = IdentificacionCliente.ToString.Trim
+        Identificador_Vuelo.InnerText = Vueloidentificador.ToString.Trim
+
+        Detalles.AppendChild(Identificacion_Cliente)
+        Detalles.AppendChild(Identificador_Vuelo)
+
+        XMLReservas.DocumentElement.InsertAfter(Detalles, ultimoNodo)
+        XMLReservas.Save(URL)
+
+    End Sub
+
+
+
     Public Function LeerXML(ByVal URL As String) As ArrayList
         Try
             Dim InfoClienteCargada As New ArrayList
@@ -473,6 +497,10 @@ Public Class OPERACIONES
         End Try
 
     End Function
+
+
+
+
 #End Region
 
 
