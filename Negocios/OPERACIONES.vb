@@ -370,18 +370,108 @@ Public Class OPERACIONES
 
     Public Function LeerXML(ByVal URL As String) As ArrayList
         Try
+            Dim InfoClienteCargada As New ArrayList
+
             Dim aNombreCliente, aApellidosCliente, aIdentificacionCliente, aNacionalidadCliente, aValorMaletasExtra,
-         aPesoMaleta, aVueloidentificador, aPaisDestino, aFechaSalida, aFechaRegreso, aHoraSalida,
-         aPrecioTiquete, aCantidaddias, acantAcompanantes, adescuento, aextrasZonaPrefe, aextraZonaLegrom, aextraInternet,
-          aextrafasttrack, aNombreAcompanante, aApellidosAcompanante, aIdentificacionAcompanante, aNacionalidadAcompanante As Integer
+             aPesoMaleta, aVueloidentificador, aPaisDestino, aFechaSalida, aFechaRegreso, aHoraSalida,
+                 aPrecioTiquete, aCantidaddias, acantAcompanantes, aNombreAcompanante, aApellidosAcompanante,
+                 aIdentificacionAcompanante, aNacionalidadAcompanante, lineaLeida As String
 
-            Dim arrBoletos As New ArrayList
+            Dim objDatos As New ClassXML
+            Dim DocumentEnCliente As New XmlDocument
 
-            Return arrBoletos
+            DocumentEnCliente = objDatos.LeerArchivoXML(URL)
+            Dim Nodo As XmlNode = DocumentEnCliente.DocumentElement
+
+            For Each info2 As XmlElement In Nodo
+                For Each info As XmlElement In info2
+                    If info.Name = "Identificacion_Cliente" Then
+                        aIdentificacionCliente = info.InnerText
+                    End If
+                    If info.Name = "Identificador_Vuelo" Then
+                        aVueloidentificador = info.InnerText
+                    End If
+                    If info.Name = "Nombre_Cliente" Then
+                        aNombreCliente = info.InnerText
+                    End If
+                    If info.Name = "Apellidos_Cliente" Then
+                        aApellidosCliente = info.InnerText
+                    End If
+                    If info.Name = "Nacionalidad_Cliente" Then
+                        aNacionalidadCliente = info.InnerText
+                    End If
+                    If info.Name = "Pais_Destino" Then
+                        aPaisDestino = info.InnerText
+                    End If
+                    If info.Name = "Fecha_Salida" Then
+                        aFechaSalida = info.InnerText.Trim
+                    End If
+                    If info.Name = "Fecha_Regreso" Then
+                        aFechaRegreso = info.InnerText.Trim
+                    End If
+                    If info.Name = "Hora_Salida" Then
+                        aHoraSalida = info.InnerText.Trim
+                    End If
+                    If info.Name = "Cantidad_Dias" Then
+                        aCantidaddias = info.InnerText
+                    End If
+                    If info.Name = "Cantidad_Acompanantes" Then
+                        acantAcompanantes = info.InnerText
+                    End If
+                    If info.Name = "Nombre_Acompanante" Then
+                        If info.InnerText = "" Then
+                            aNombreAcompanante = "No indicado"
+                        Else
+                            aNombreAcompanante = info.InnerText
+                        End If
+
+                    End If
+                    If info.Name = "Apellido_Acompanante" Then
+                        If info.InnerText = "" Then
+                            aApellidosAcompanante = "No indicado"
+                        Else
+                            aApellidosAcompanante = info.InnerText
+                        End If
+
+                    End If
+                    If info.Name = "Identif_Acompanante" Then
+                        If info.InnerText = "" Then
+                            aIdentificacionAcompanante = "No indicado"
+                        Else
+                            aIdentificacionAcompanante = info.InnerText
+                        End If
+
+                    End If
+                    If info.Name = "Nacionalidad_Acompanante" Then
+                        If info.InnerText = "" Then
+                            aNacionalidadAcompanante = "No indicada"
+                        Else
+                            aNacionalidadAcompanante = info.InnerText
+                        End If
+
+                    End If
+                    If info.Name = "Precio_Tiquete" Then
+                        aPrecioTiquete = info.InnerText
+                        lineaLeida = aIdentificacionCliente + "#" + aVueloidentificador + "#" + aNombreCliente + "#" + aApellidosCliente + "#" + aNacionalidadCliente + "#" +
+                            aPaisDestino + "#" + aFechaSalida + "#" + aFechaRegreso + "#" + aHoraSalida + "#" + aCantidaddias + "#" + acantAcompanantes + "#" +
+                             aNombreAcompanante + "#" + aApellidosAcompanante + "#" + aIdentificacionAcompanante + "#" + aNacionalidadAcompanante + "#" + aPrecioTiquete
+
+                        Dim vecValores() As String = lineaLeida.Split("#")
+
+                        InfoClienteCargada.Add(vecValores)
+
+                    End If
+
+                Next
+            Next
+
+            Return InfoClienteCargada
+
 
         Catch ex As Exception
-            Throw New Exception("Error al leer el archivo XML en Operaciones")
+            Throw New Exception("Error al leer el archivo XML en negocios, cliente")
         End Try
+
     End Function
 #End Region
 
