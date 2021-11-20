@@ -271,6 +271,7 @@ Public Class frmReservaVuelo
                 If Not File.Exists(URL) Then
                     Dim ListaBoletosComprados As New List(Of Negocios.OPERACIONES)
                     'estas validaciones son necesarias en el caso que no lleve acompañantes, por la conversion mas delante
+
                     If Not IsNumeric(txtCantidadAcompanantes.Text) Then
                         txtCantidadAcompanantes.Text = 0
                     End If
